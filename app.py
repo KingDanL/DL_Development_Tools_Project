@@ -12,6 +12,8 @@ df = pd.read_csv('vehicles_us.csv')
 for col in ['model_year', 'odometer']:
     df = df[df[col].notnull()]
 
+df['model_year'] = df['model_year'].convert_dtypes(convert_integer=True)
+
 # Setting 'unknown' for unknown paint_color values
 df['paint_color'] = df['paint_color'].fillna('unknown')
 
@@ -30,7 +32,7 @@ filter_year = st.checkbox('Filter by Year')
 
 if filter_year:
     # Allow user to select a year
-    selected_year = st.selectbox('Select Year', df['model_year'].unique())
+    selected_year = st.selectbox('Select Year', sorted(df['model_year'].unique(), reverse = True))
 
     # Filter the data based on the selected year
     df_filtered = df[df['model_year'] == selected_year]
