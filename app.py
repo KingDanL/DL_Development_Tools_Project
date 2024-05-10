@@ -45,7 +45,7 @@ df_count = df_filtered[df_filtered['is_4wd']].groupby(['manufacturer', 'model_ye
 fig = px.bar(df_count, x='model_year', y='count', color='manufacturer', barmode='group', title='Amount of 4WD Cars per Year per Manufacturer')
 
 # Writing the histogram to the app
-st.write(fig)
+st.write(fig) 
 
 
 
