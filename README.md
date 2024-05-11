@@ -1,6 +1,10 @@
 # Random Events Simulation Tool
 
-This project is a tool to simulate random events, specifically focusing on analyzing the amount of 4WD cars per year per model. It uses Python along with the Pandas, Plotly Express, and Streamlit libraries to implement the simulation and visualization.
+This project is a tool to simulate random events, specifically focusing on analyzing:
+1. The amount of 4WD cars per year per model. 
+2. The correlation between price and model year.
+
+It uses Python along with the Pandas, Plotly Express, and Streamlit libraries to implement the analysis and visualization.
 
 ## Libraries Used
 
@@ -16,3 +20,7 @@ To launch this project on your local machine, follow these steps:
 
    ```bash
    git clone https://github.com/KingDanL/DL_Development_Tools_Project.git
+2. Enter the root directory of the project
+3. run:
+   ```bash
+   streamlit run app.py
