@@ -1,3 +1,6 @@
+## URL of the live project
+https://dl-development-tools-project.onrender.com/
+
 # Random Events Simulation Tool
 
 This project is a tool to simulate random events, specifically focusing on analyzing:
