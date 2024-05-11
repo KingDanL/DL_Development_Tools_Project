@@ -49,6 +49,20 @@ fig = px.bar(df_count, x='model_year', y='count', color='manufacturer', barmode=
 # Writing the histogram to the app
 st.write(fig) 
 
+# Generating scatter plot for price Vs model year
+# -----------------------------------------------
+
+# filterring irelevant prices
+df_filtered = df[df['price'] >= 100]
+fig = px.scatter(df_filtered, x='model_year', y='price', 
+                 hover_name='model', title='Price vs Model Year',
+                 labels={'model_year': 'Model Year', 'price': 'Price'})
+
+# Update layout
+fig.update_layout(showlegend=False)
+
+# Writing the histogram to the app
+st.write(fig) 
 
 
 
