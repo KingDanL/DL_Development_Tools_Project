@@ -3,26 +3,7 @@ import plotly.express as px
 import streamlit as st
 
 # Loading the CSV
-df = pd.read_csv('vehicles_us.csv')
-
-# Fixing the data
-# ---------------
-
-# Filtering rows with invalid data
-for col in ['model_year', 'odometer']:
-    df = df[df[col].notnull()]
-
-df['model_year'] = df['model_year'].convert_dtypes(convert_integer=True)
-
-# Setting 'unknown' for unknown paint_color values
-df['paint_color'] = df['paint_color'].fillna('unknown')
-
-# Converting the is_4wd from 1.0/NA to boolean
-df['is_4wd'] = df['is_4wd'].fillna(0)
-df['is_4wd'] = df['is_4wd'] == 1
-
-# Adding the manufacturer column. Assuiming the first word of the model is that.
-df['manufacturer'] = df['model'].str.split(' ').str[0]
+df = pd.read_csv('vehicles_us_fixed.csv')
 
 # Writing the App's header
 st.header("DL Development Tools Project App")
